@@ -1,0 +1,11 @@
+{
+	"id": "obsidian-kadi4mat-sync",
+	"name": "Kadi4Mat Sync",
+	"version": "0.1.0",
+	"minAppVersion": "1.4.0",
+	"description": "Sync your Obsidian notes with Kadi4Mat scientific data repository",
+	"author": "Your Name",
+	"authorUrl": "https://github.com/yourusername",
+	"fundingUrl": "",
+	"isDesktopOnly": false
+}

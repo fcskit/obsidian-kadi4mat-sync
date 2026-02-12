@@ -1,0 +1,66 @@
+# GitHub Pages Configuration for Obsidian Kadi4Mat Sync Plugin
+theme: jekyll-theme-cayman
+title: Obsidian Kadi4Mat Sync Plugin
+description: Sync your Obsidian notes to Kadi4Mat research data repository
+show_downloads: true
+github:
+  repository_url: https://github.com/fcskit/obsidian-kadi4mat-sync
+  is_project_page: true
+  owner_name: fcskit
+
+# Navigation
+navigation:
+  - title: User Guide
+    url: /user/
+  - title: Installation
+    url: /user/installation.html
+  - title: Usage
+    url: /user/usage.html
+  - title: Developer Docs
+    url: /developer/public/
+
+# Exclude files from GitHub Pages
+exclude:
+  # Internal developer documentation (hidden from public site)
+  - developer/API-FIELDS-FIX.md
+  - developer/BUILD-SYSTEM-CONSOLIDATION-SUMMARY.md
+  - developer/BUILD-SYSTEM-STRATEGY.md
+  - developer/BUILD-SYSTEM.md
+  - developer/CORS-FIX-SUMMARY.md
+  - developer/CORS-FIX.md
+  - developer/FIELD-VALUES-FIX.md
+  - developer/INTEGRATION-COMPLETE.md
+  - developer/LICENSE-SELECTION.md
+  - developer/PROJECT-STATUS.md
+  - developer/QUICKSTART.md
+  - developer/SYNC-MODAL-DOCS.md
+  - developer/SYNC-MODAL-IMPLEMENTATION.md
+  - developer/UI-FIXES.md
+  # Build outputs
+  - main.js
+  # Node modules
+  - node_modules/
+  # Test vault
+  - test-vault/
+  # Build scripts
+  - "*.mjs"
+  - esbuild.config.mjs
+  # System files
+  - .DS_Store
+  - "*.json"
+  - ".eslintrc*"
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  hard_wrap: false
+
+# Plugin settings
+plugins:
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: true

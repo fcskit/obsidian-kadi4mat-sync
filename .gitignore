@@ -1,0 +1,35 @@
+# Logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Build output
+main.js
+*.js.map
+dist/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test files
+test-vault/
+
+# Development vault (shared with other plugins)
+../obsidian-dev-vault/
+
+# Release builds
+release/
+*.zip
+
+# Temp files
+*.tmp
