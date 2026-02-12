@@ -310,8 +310,8 @@ export class SyncEngine {
 		recordId: number,
 		params: {
 			title: string;
-			state: 'draft' | 'submitted' | 'published';
-			visibility: 'private' | 'internal' | 'public';
+			state: 'active' | 'inactive';
+			visibility: 'private' | 'public';
 			license: string;
 		},
 		description: string, 
