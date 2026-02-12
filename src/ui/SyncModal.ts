@@ -271,9 +271,6 @@ export class SyncModal extends Modal {
 		}).addEventListener('click', () => {
 			this.confirmSync();
 		});
-
-		// Add styles
-		this.addStyles();
 	}
 
 	private previewMetadata() {
@@ -405,95 +402,6 @@ export class SyncModal extends Modal {
 			
 			new Notice('Sync failed: ' + errorMessage);
 		}
-	}
-
-	private addStyles() {
-		// Add inline styles for the modal
-		const style = document.createElement('style');
-		style.textContent = `
-			/* Modal container width */
-			.kadi-sync-modal-container {
-				width: 650px;
-				max-width: 90vw;
-			}
-
-			.kadi-sync-modal {
-				/* Remove min-width since parent container handles sizing */
-			}
-
-			.kadi-file-info,
-			.kadi-record-info {
-				color: var(--text-muted);
-				font-size: 0.9em;
-				margin: 0.5em 0;
-			}
-
-			.kadi-settings-container {
-				margin: 1.5em 0;
-				padding: 1em;
-				background: var(--background-secondary);
-				border-radius: 6px;
-			}
-
-			.kadi-debug-section {
-				margin-top: 1em;
-				padding: 1em;
-				background: var(--background-secondary);
-				border-radius: 6px;
-			}
-
-			.kadi-debug-messages {
-				background: var(--background-primary);
-				color: var(--text-normal);
-				padding: 1em;
-				border-radius: 4px;
-				max-height: 300px;
-				overflow-y: auto;
-				font-family: var(--font-monospace);
-				font-size: 0.85em;
-				line-height: 1.4;
-				white-space: pre-wrap;
-				word-wrap: break-word;
-				margin-bottom: 1em;
-			}
-
-			.kadi-button-container {
-				display: flex;
-				justify-content: flex-end;
-				gap: 0.5em;
-				margin-top: 1.5em;
-				padding-top: 1em;
-				border-top: 1px solid var(--background-modifier-border);
-			}
-
-			.kadi-button-container button {
-				padding: 0.5em 1.5em;
-			}
-
-			/* License selection modal styles */
-			.kadi-license-suggestion {
-				padding: 0.5em;
-			}
-
-			.kadi-license-container {
-				display: flex;
-				flex-direction: column;
-				gap: 0.25em;
-			}
-
-			.kadi-license-name {
-				font-size: 1em;
-				font-weight: 500;
-				color: var(--text-normal);
-			}
-
-			.kadi-license-id {
-				font-size: 0.85em;
-				color: var(--text-muted);
-				font-family: var(--font-monospace);
-			}
-		`;
-		document.head.appendChild(style);
 	}
 
 	onClose() {

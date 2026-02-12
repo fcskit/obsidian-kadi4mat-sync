@@ -189,6 +189,71 @@ This is an Obsidian plugin that:
 - The plugin follows Obsidian's plugin development patterns
 - All UI components should integrate with Obsidian's theming system
 
+### Styling Guidelines
+
+**CRITICAL: Never Hardcode CSS in TypeScript**
+
+This plugin uses a proper `styles.css` file for all static styling. **Never** inject styles dynamically in TypeScript code.
+
+**❌ NEVER DO THIS:**
+```typescript
+// DON'T create styles dynamically
+const style = document.createElement('style');
+style.textContent = `...`;
+document.head.appendChild(style);
+
+// DON'T hardcode style values in TypeScript
+element.style.width = '650px';
+element.style.padding = '1em';
+```
+
+**✅ ALWAYS DO THIS:**
+```css
+/* Put all static styles in styles.css */
+.my-component {
+	width: 650px;
+	padding: 1em;
+}
+```
+
+```typescript
+// Use CSS classes in TypeScript
+element.addClass('my-component');
+```
+
+**When to use `.style` in TypeScript:**
+- ✅ **Conditional display**: `element.style.display = 'none'` based on logic
+- ✅ **Dynamic calculations**: Width based on user input or runtime data
+- ✅ **Programmatic state changes**: Show/hide, enable/disable based on conditions
+
+**When to use `styles.css`:**
+- ✅ **All static styling**: Colors, fonts, spacing, layout
+- ✅ **Component dimensions**: Width, height, padding, margin
+- ✅ **Visual design**: Backgrounds, borders, shadows, border-radius
+- ✅ **Responsive design**: Media queries, flexible layouts
+- ✅ **Typography**: Font sizes, weights, line heights
+
+**Obsidian CSS Variables to Use:**
+
+Always use Obsidian's CSS variables for theming compatibility:
+
+- `var(--background-primary)` - Main background color
+- `var(--background-secondary)` - Secondary background (cards, sections)
+- `var(--background-modifier-border)` - Border colors
+- `var(--text-normal)` - Normal text color
+- `var(--text-muted)` - Muted/secondary text
+- `var(--text-faint)` - Very light text
+- `var(--font-monospace)` - Code/monospace font
+- `var(--interactive-accent)` - Accent color (buttons, links)
+- `var(--interactive-accent-hover)` - Accent hover state
+
+**Why This Matters:**
+1. **Separation of concerns** - CSS belongs in CSS files, not JavaScript
+2. **Maintainability** - Easy to find and modify styles
+3. **Performance** - No dynamic DOM manipulation needed
+4. **Theming** - Users can customize via CSS snippets
+5. **Standards** - Follows Obsidian plugin best practices
+
 ## TODO System Workflow
 
 ### Primary Reference for Work Planning
