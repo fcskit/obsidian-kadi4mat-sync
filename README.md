@@ -23,10 +23,21 @@ Sync your Obsidian notes with [Kadi4Mat](https://kadi.iam.kit.edu) scientific da
 3. Search for "Kadi4Mat Sync"
 4. Click Install, then Enable
 
+### Using BRAT (Beta Reviewers Auto-update Tester)
+
+For pre-release versions and automatic updates:
+
+1. Install the [BRAT plugin](https://github.com/TfTHacker/obsidian42-brat)
+2. Open command palette and run "BRAT: Add a beta plugin for testing"
+3. Enter: `fcskit/obsidian-kadi4mat-sync`
+4. Enable the plugin in Settings → Community plugins
+
+BRAT will automatically check for updates and notify you when new versions are available.
+
 ### Manual Installation
 
-1. Download the latest release from [GitHub Releases](https://github.com/your-org/obsidian-kadi4mat-sync/releases)
-2. Extract the files to your vault's plugins folder: `<vault>/.obsidian/plugins/obsidian-kadi4mat-sync/`
+1. Download the latest release from [GitHub Releases](https://github.com/fcskit/obsidian-kadi4mat-sync/releases)
+2. Extract `main.js` and `manifest.json` to your vault's plugins folder: `<vault>/.obsidian/plugins/obsidian-kadi4mat-sync/`
 3. Reload Obsidian
 4. Enable the plugin in Settings → Community plugins
 
